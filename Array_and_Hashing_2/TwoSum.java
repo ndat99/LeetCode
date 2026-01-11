@@ -1,6 +1,6 @@
-package Array_and_Hashing;
+package Array_and_Hashing_2;
 
-public class TwoSum_1 {
+public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
         int[] sum = new int[2];
         for (int i=0; i<nums.length; i++){
@@ -16,7 +16,7 @@ public class TwoSum_1 {
     }
 
     public static void main(String args[]) {
-        TwoSum_1 solution = new TwoSum_1();
+        TwoSum solution = new TwoSum();
         int[] nums = {2, 7, 11, 15};
         int target = 18;
         int[] result = solution.twoSum(nums, target);
