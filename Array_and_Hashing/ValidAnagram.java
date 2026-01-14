@@ -1,25 +1,24 @@
-package Array_and_Hashing;
+package Array_and_Hashing_2;
+import java.util.Arrays;
 
 public class ValidAnagram {
     public boolean isAnagram(String s, String t) {
         if (t.length() != s.length())
             return false;
-        int[] charCounts = new int[26];
-        for (int i=0; i<s.length(); i++){
-            charCounts[s.charAt(i) - 'a']++;
-            charCounts[t.charAt(i) - 'a']--;
-        }
-        for (int count : charCounts){
-            if (count != 0)
-                return false;
-        }
-        return true;
+        char[] s1 = s.toCharArray();
+        char[] t1 = t.toCharArray();
+        Arrays.sort(s1);
+        Arrays.sort(t1);
+        String s2 = new String(s1);
+        String t2 = new String(t1);
+        if (s2.equals(t2)) return true;
+        return false;
     }
     
-    public static void main(String args[]) {
+    public static void main(String[] args){
         ValidAnagram solution = new ValidAnagram();
-        String s = "abcdefg";
-        String t = "cdefabg";
+        String s = "abcdefga";
+        String t = "cdeabfga";
         System.out.println(solution.isAnagram(s, t));
     }
 }

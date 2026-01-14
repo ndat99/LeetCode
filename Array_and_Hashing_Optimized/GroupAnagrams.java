@@ -1,4 +1,4 @@
-package Array_and_Hashing_2;
+package Array_and_Hashing;
 
 public class GroupAnagrams {
     

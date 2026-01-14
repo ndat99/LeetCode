@@ -1,18 +1,18 @@
-package Array_and_Hashing;
-import java.util.HashMap;
-import java.util.Map;
+package Array_and_Hashing_2;
 
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> map = new HashMap<>();
+        int[] sum = new int[2];
         for (int i=0; i<nums.length; i++){
-            int addedNumber = target - nums[i];
-            if (map.containsKey(addedNumber)){
-                return new int[] {map.get(addedNumber), i};
+            for (int j=i+1; j<nums.length; j++){
+                if ((nums[i] + nums[j]) == target){
+                    sum[0] = i;
+                    sum[1] = j;
+                    break;
+                }
             }
-            map.put(nums[i], i);
         }
-        return new int[] {};
+        return sum;
     }
 
     public static void main(String args[]) {
